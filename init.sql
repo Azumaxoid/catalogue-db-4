@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS socks (
     image_url_2 varchar(40)
     );
 
+CREATE INDEX socks_id_index on socks(id);
+
 CREATE TABLE IF NOT EXISTS tags (
                                    tag_id MEDIUMINT NOT NULL AUTO_INCREMENT,
                                    name varchar(20),
@@ -21,6 +23,8 @@ CREATE TABLE IF NOT EXISTS sock_tags (
     sock_id varchar(40),
     tag_id MEDIUMINT NOT NULL
     );
+
+CREATE INDEX sock_tags_tag_id_index on socks(tag_id);
 
 INSERT INTO socks VALUES ("6d62d909-f957-430e-8689-b5129c0bb75e", "Weave special", "Limited issue Weave socks.", 17.15, 33, "/catalogue/images/weave1.jpg", "/catalogue/images/weave2.jpg");
 INSERT INTO socks VALUES ("a0a4f044-b040-410d-8ead-4de0446aec7e", "Nerd leg", "For all those leg lovers out there. A perfect example of a swivel chair trained calf. Meticulously trained on a diet of sitting and Pina Coladas. Phwarr...", 7.99, 115, "/catalogue/images/bit_of_leg_1.jpeg", "/catalogue/images/bit_of_leg_2.jpeg");
